@@ -215,6 +215,7 @@ class QueueMonitor
             'name' => $job->resolveName(),
             'started_at' => $now,
             'started_at_exact' => $now->format(self::TIMESTAMP_EXACT_FORMAT),
+            'queued_at' => $monitor->queued_at ?? $now,
             'attempt' => $job->attempts(),
             'status' => MonitorStatus::RUNNING,
         ]);
